@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">Circular</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Circular</string>
+    <string name="title_activity_start_screen">Circular</string>
+
+</resources>
