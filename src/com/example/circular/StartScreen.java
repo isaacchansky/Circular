@@ -99,7 +99,7 @@ public class StartScreen extends FragmentActivity {
 				database.open();
 				Cursor cursor = database.getTopScores();
 				int rankcounter = 1;
-				while(cursor.moveToNext()){
+				while(cursor.moveToNext() && rankcounter<=10){
 					rank += rankcounter+"\n";
 					highscoreNames +=  cursor.getString(1)+"\n";
 					highscoreValues += cursor.getString(2)+"\n";

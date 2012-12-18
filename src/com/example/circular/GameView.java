@@ -306,8 +306,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 		 */
 
 		// set up game variables
-		shotVelocity = 10;
-		enemyVelocity = 1;
+		shotVelocity = 15;
+		enemyVelocity = 1.5;
 		shieldVelocity = 1;
 		bombVelocity = 5;
 		enemyFrequency = 1.5;
@@ -824,8 +824,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 				//every 20 enemies at 5pts each, increase velocity a bit
 				if(score > scoreThreshold){
 					Log.e("BEFORE SCORE THRESHOLD", "vel: "+enemyVelocity+" freq: "+enemyFrequency);
-					enemyVelocity += Math.log10(enemyVelocity);
-					enemyFrequency -= Math.log10(enemyFrequency);
+					enemyVelocity += Math.log10(enemyVelocity)/1.5;
+					enemyFrequency -= (Math.log10(enemyFrequency*2));
 					scoreThreshold += 100;
 					Log.e("AFTER SCORE THRESHOLD", "vel: "+enemyVelocity+" freq: "+enemyFrequency);
 				}
@@ -1012,6 +1012,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 			
 			basecamp.draw(canvas);
 			
+			//adjust basecamp radius and length of shield and bomb bars to ease animation
+			
+			 
 			//canvas.drawCircle(centerX, centerY, gestureFieldRadius, fieldMarker);
 
 			// set score text
@@ -1073,10 +1076,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 
 		}
 		
-		
-		public void drawEndGame(Canvas c){
-			//display end game text
-		}
 		
 		
 		public void cleanUpGameElements(){
